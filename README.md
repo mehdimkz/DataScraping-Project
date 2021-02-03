@@ -18,9 +18,13 @@ Brand, Actual price, Discounted price, link to the image of the product.
 
 # Setting up the application on Docker
 1- To run this application, the docker software have to be installed on the host machine.
+
 2- Pull the  application-container folderto the host machine.
+
 3- Enter to the application-container folder inside the host machine.
+
 4- Create Docker image using docker using following command:
+
  ```bash
 $ docker image build -t zalora-app .
 
@@ -34,14 +38,4 @@ $ docker run -p 8080:8500 -d fraud-app
 # Need to run below python command from the other machine (e.g. your mac or windows which has python already installed)
 python Veltra_client_request.py
 ```
-# Useful links to read:
-* Turning Machine Learning Models into APIs in Python 
-(https://www.datacamp.com/community/tutorials/machine-learning-models-api-python)
-* Dockerize Your Flask Application
-(https://medium.com/@tasnuva2606/dockerize-flask-app-4998a378a6aa)
-* Docker Made Easy for Data Scientists
-(https://towardsdatascience.com/docker-made-easy-for-data-scientists-b32efbc23165)
-* Build a Docker Container with Your Machine Learning Model
-(https://towardsdatascience.com/build-a-docker-container-with-your-machine-learning-model-3cf906f5e07e)
-* Host your python flask on AWS EC2
-(https://medium.com/dev-genius/host-your-python-flask-on-aws-ec2-91735aa7127a)
+
