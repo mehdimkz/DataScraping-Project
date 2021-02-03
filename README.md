@@ -12,39 +12,17 @@ I have also scrape all the shoes for brand “Aldo” under the filter “Occasi
 
 https://www.zalora.com.my/women/shoes/?from=header&occasion=Casual&brand=aldo
 
-The output file, will be a json file which has the following fields:
+The output file will be a json file which has the following fields:
 Brand, Actual price, Discounted price, link to the image of the product.
 
 
-# Dockerized Flask application on EC2
-1- Create a Linux virtual machine in the Azure portal:
-Azure virtual machines (VMs) can be created through the Azure portal. The Azure portal is a browser-based user interface to create Azure resources. This quickstart shows you how to use the Azure portal to deploy a Linux virtual machine (VM) running Ubuntu 18.04 LTS. To see your VM in action, you also SSH to the VM and install the NGINX web server.
-If you don't have an Azure subscription, create a free account before you begin.
-Guideline:
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal
-
-2- Open ports to a virtual machine with the Azure portal:
-( we need to open a port in our virtual linux server to let applications from outside the server can send their data to the dockerized Flask application on the linux server)
-Guideline:
-https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal
-
-3- Copy files located in Dockerized_FlaskApp folder on Github to a Folder created in linux server using Filezilla application
-
-4- Installing Docker CE on an AWS EC2 instance running Ubuntu 16.04
-Guideline:
-https://medium.com/@cjus/installing-docker-ce-on-an-aws-ec2-instance-running-ubuntu-16-04-f42fe7e80869
-
-5-Dockerize Flask Application:
-(Guideline:https://medium.com/@tasnuva2606/dockerize-flask-app-4998a378a6aa)
- - Enter to the Dockerized_FlaskApp folder inside linux vps
- - Create Docker image using docker file:
-
- Run the following command to create the docker image from src directory, Pass in the -t parameter to name your image fraud-app.
+# Setting up the application on Docker
+1- To run this application, the docker software have to be installed on the host machine.
+2- Pull the  application-container folderto the host machine.
+3- Enter to the application-container folder inside the host machine.
+4- Create Docker image using docker using following command:
  ```bash
-$ docker image build -t fraud-app .
-
-#Verify that your image shows in your image list:
-$ docker image ls
+$ docker image build -t zalora-app .
 
 #Run the docker container
 $ docker run -p 8080:8500 -d fraud-app
