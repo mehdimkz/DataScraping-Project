@@ -17,7 +17,7 @@ def Crawl_data(url):
    print(main_url)
    session = HTMLSession()
    r = session.get(main_url)
-   r.html.render(timeout=15) #timeout can be adjusted to let the webpage load compeletely.
+   r.html.render(timeout=8) #timeout can be adjusted to let the webpage load compeletely.
    soup = BeautifulSoup(r.html.raw_html, "html.parser")
 
    pages = soup.findAll(class_="page-item")
@@ -90,7 +90,7 @@ def main():
           'https://www.zalora.com.my/women/shoes/?from=header&occasion=Casual&brand=aldo']
     for url in  Urls:
         Crawl_data(url)
-        time.sleep(5)
+        time.sleep(4)
 
 
 
