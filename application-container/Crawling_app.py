@@ -17,8 +17,7 @@ def Crawl_data(url):
    print(main_url)
    session = HTMLSession()
    r = session.get(main_url)
-   r.html.render(timeout=15)
- #  r.html.render(sleep=3)
+   r.html.render(timeout=15) #timeout can be adjusted to let the webpage load compeletely.
    soup = BeautifulSoup(r.html.raw_html, "html.parser")
 
    pages = soup.findAll(class_="page-item")
@@ -70,7 +69,7 @@ def Crawl_data(url):
            feeds = json.load(feedsjson)
 
        feeds.append(extracted_records)
-       with open('data2.json', mode='w') as f:
+       with open('data.json', mode='w') as f:
            f.write(json.dumps(feeds, indent=2))
            extracted_records=[]
 
@@ -86,9 +85,9 @@ def Crawl_data(url):
 
 
 def main():
-    Urls=['https://www.zalora.com.my/women/shoes/?csa=shoes&category_id=6111',
-          'https://www.zalora.com.my/men/shoes/?from=header&category_id=6537',
-          'https://www.zalora.com.my/women/shoes/aldo/?from=header&occasion=Workwear--Bridal--Evening--Party--Casual&brand=aldo']
+    Urls=['https://www.zalora.com.my/women/shoes/?from=header',
+          'https://www.zalora.com.my/men/shoes/?from=header',
+          'https://www.zalora.com.my/women/shoes/?from=header&occasion=Casual&brand=aldo']
     for url in  Urls:
         Crawl_data(url)
         time.sleep(5)
