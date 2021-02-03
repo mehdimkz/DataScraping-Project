@@ -32,14 +32,8 @@ $ docker image build -t zalora-app .
 ```
 $ sudo docker run -it -v ~/application-container:/app zalora-app Crawling_app.py
 ```
-#The -v flag run the image with sharing "application-container" folder on the host machine with "app" folder on the container. So we will be able to the see 
-the output file (json file) on the host machine as well.
+#The -v flag run the image with sharing "application-container" folder on the host machine with "app" folder on the container. So we will be able to save and access the output file (json file) on the host machine as well.
 
 
-```
-## Test the docker application:
-```python
-# Need to run below python command from the other machine (e.g. your mac or windows which has python already installed)
-python Veltra_client_request.py
-```
+
 
