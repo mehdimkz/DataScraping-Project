@@ -6,6 +6,7 @@ website and for the brand “Aldo” under the filter “Occasion” “Casual�
 In order to scrape all shoes, I have scrape all the shoes from following links which address all the shoes for women and men.
 
 https://www.zalora.com.my/women/shoes/
+
 https://www.zalora.com.my/men/shoes/
 
 I have also scrape all the shoes for brand “Aldo” under the filter “Occasion” “Casual”, using the following link:
