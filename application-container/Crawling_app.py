@@ -60,12 +60,12 @@ def Crawl_data(url):
 
    # write output to a JSON file
 
-   if not os.path.isfile('data2.json'):
-       with open('data2.json', mode='w') as f:
+   if not os.path.isfile('data.json'):
+       with open('data.json', mode='w') as f:
            f.write(json.dumps(extracted_records, indent=2))
            extracted_records=[]
    else:  #Update exisiting json file
-       with open('data2.json') as feedsjson:
+       with open('data.json') as feedsjson:
            feeds = json.load(feedsjson)
 
        feeds.append(extracted_records)
