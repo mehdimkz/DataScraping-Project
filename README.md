@@ -23,14 +23,15 @@ Brand, Actual price, Discounted price, link to the image of the product.
 
 3- Enter to the application-container folder inside the host machine.
 
-4- Create Docker image using docker using following command:
+4- Create Docker image from Dockerfile using following command:
 
  ```bash
 $ docker image build -t zalora-app .
-
-#Run the docker container
-$ docker run -p 8080:8500 -d fraud-app
-
+ ```
+5- Run the docker container from the image created and run the python application.
+```
+$ sudo docker run -it -v ~/application-container:/app zzz Crawling_app.py
+```
 #The -p flag maps a port running inside the container to your host. In this case, we're mapping the Python app running on port 8500 inside the container to port 8080 on your host.(here, host is EC2 vps, and port 8080 has been opened based on step2)
 ```
 ## Test the docker application:
